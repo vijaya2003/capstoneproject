@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+   
+    <style>
+      table{
+        position:relative;
+      }
+      body{
+        background-image: linear-gradient(red, yellow);
+        background-repeat:no-repeat;
+        background-size: cover;
+        height: 750px;
+      }
+      img{
+        border-radius: 50%;
+      }
+  </style>
+  </head>
+  <body>
+    <br>
+    <marquee width="80%" direction="left" height="50px" scrollamount="12">
+      <h1>Events Ongoing are displayed below</h1>
+      </marquee>
+    
+      <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Event Name : </th>
+            <th scope="col">Date :</th>
+            <th scope="col">Time : </th>
+            <th scope="col">Place : </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% responseArr.forEach(function(result){ %>
+          <tr>
+            <!-- <th scope="row">1</th> -->
+            <td><img src="https://thumbs.dreamstime.com/z/events-icon-calendar-simple-vector-white-background-122490231.jpg" alt="Avatar" style="width:100px"></td>
+            <td><h2><%= result.eventname %></h2></td>
+            <td><h2><%= result.date %></h2></td>
+            <td><h2><%= result.time %></h2></td>
+            <td><h2><%= result.place %></h2></td>
+          </tr>
+          <%  }); %>
+        </tbody>
+      </table>
+   
+   
+    
+  </body>
+</html>
+
+
+
+
+
+
